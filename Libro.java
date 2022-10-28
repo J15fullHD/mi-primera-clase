@@ -4,10 +4,10 @@ public class Libro {
     private int numPaginas;
     private boolean abierto;
     
-    public Libro() {
-        titulo = "Hamlet";
-        numPaginas = 800;
-        abierto = false;
+    public Libro(String miTitulo, int otroNumPaginas, boolean estadoAbierto) {
+        titulo = miTitulo;
+        numPaginas = otroNumPaginas;
+        abierto = estadoAbierto;
     }
     
     public String getTitulo() {
@@ -18,7 +18,7 @@ public class Libro {
         return numPaginas;
     }
     
-    public boolean getAbierto() {
+    public boolean isAbierto() {
         return abierto;
     }
     
@@ -26,8 +26,8 @@ public class Libro {
         titulo = otroTitulo;
     }
     
-    public void aniadirPaginas(int num) {
-        numPaginas = numPaginas + num;
+    public void aniadirPaginas(int sumaPaginas) {
+        numPaginas = numPaginas + sumaPaginas;
     }
     
     public void abrirCerrar() {
@@ -39,12 +39,16 @@ public class Libro {
     }
     
     public void imprimirDetalles() {
-        System.out.println("El libro se llama " + titulo);
-        System.out.println("Este libro tiene " + numPaginas + " paginas");
-        System.out.println("El libro esta abierto: " + abierto);
+        if(abierto == true) {
+           System.out.println("El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta abierto"); 
+        } else {
+            System.out.println("El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta cerrado");
+        }
     }
     
-    public void getDetalles() {
-        System.out.println("El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta : " + abierto);
+    public String getDetalles() {
+        String detalles;
+        detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | El libro esta: " + abierto;
+        return detalles;
     }
 }

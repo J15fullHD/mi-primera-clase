@@ -48,7 +48,11 @@ public class Libro {
     
     public String getDetalles() {
         String detalles;
-        detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | El libro esta: " + abierto;
+        if(abierto == true) {
+            detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta abierto";
+        } else  {
+            detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta cerrado";
+        }
         return detalles;
     }
 }

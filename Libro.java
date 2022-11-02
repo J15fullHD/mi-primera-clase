@@ -39,20 +39,24 @@ public class Libro {
     }
     
     public void imprimirDetalles() {
+        String estado;
         if(abierto == true) {
-           System.out.println("El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta abierto"); 
+            estado = "abierto";
         } else {
-            System.out.println("El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta cerrado");
+            estado = "cerrado";
         }
+        System.out.println("El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta " + estado);
     }
     
     public String getDetalles() {
         String detalles;
+        String estado;
         if(abierto == true) {
-            detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta abierto";
+            estado = "abierto";
         } else  {
-            detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta cerrado";
+            estado = "cerrado";
         }
+        detalles = "El libro se llama " + titulo + " | Este libro tiene " + numPaginas + " paginas | Es libro esta " + estado;
         return detalles;
     }
 }
